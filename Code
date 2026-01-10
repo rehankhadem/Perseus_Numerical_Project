@@ -138,7 +138,20 @@ void generateErrorFiles(const vector<vector<double>> &R,
 
     romErr.close();
     simpErr.close();
+}                                                                                                                                                                       
+/* =====================================================
+   9. Oyshie Ahmed
+   Task: Output formatting & result presentation
+===================================================== */
+void printFinalResult(const vector<vector<double>>& R, double exact)
+{
+    cout << "\nBest Romberg Approximation = " << R[3][3] << endl;
+    cout << "Exact Value = " << exact << endl;
+    cout << "Romberg Absolute Error = "
+         << fabs(R[3][3] - exact) << endl;
 }
+
+/* 
 
 
 
