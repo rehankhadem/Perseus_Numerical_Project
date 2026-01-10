@@ -151,7 +151,27 @@ void printFinalResult(const vector<vector<double>>& R, double exact)
          << fabs(R[3][3] - exact) << endl;
 }
 
-/* 
+/* =====================================================
+   10. Abdul Ahad Emon
+   Task: Main program integration & execution flow
+===================================================== */
+int main()
+{
+    double a = 0.0, b = 1.0;
+    double exact = exactValue();
+
+    cout << fixed << setprecision(10);
+
+    int maxLevel = 6;  // full Romberg internally
+    auto R = romberg(a, b, maxLevel);
+
+    printRombergTable(R);
+    printFinalResult(R, exact);
+    compareWithSimpson(a, b, exact);
+    generateErrorFiles(R, a, b, exact);
+
+    return 0;
+}
 
 
 
